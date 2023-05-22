@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Register Form</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <form method="POST" action="register">
+      <h2>Create Your Account</h2>
+      <input name="username" type="text" class="form-control" placeholder="Username" autofocus="true"/>
+      <input name="email" type="text" class="form-control" placeholder="Email Address"/>
+      <input name="password" type="password" class="form-control" placeholder="Password"/>
+      <input name="passwordConfirm" type="password" class="form-control" placeholder="Confirm Password"/>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
+      <div style="text-align:center;margin-bottom:10px;margin-top:15px">
+        Already have an account? <a href='/login'>Log in</a>
+      </div>
+    </form>
+
+    <% if (message && message.toLowerCase().includes('success')) { %>
+      <div class="alert alert-success">
+        <strong>Success!</strong> <%= message %>
+      </div>
+    <% } else { %> 
+      <div class="alert alert-danger">
+        <strong>Failure!</strong> <%= message %>
+      </div>
+    <% } %>
+  </div>
+ 
+</body>
+</html>
